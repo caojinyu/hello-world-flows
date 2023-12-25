@@ -2,6 +2,8 @@
 //! 首先取github建立一个项目
 //! 现在我们可以开始写代码了
 //!
+//! 我们同步完毕代码了，  需要在flows中创建一个flow, 我们在创建的flow的同时会自动
+//! 进行编译和部署的，同时我们还会查看编译结果
 
 use std::collections::HashMap;
 
@@ -19,7 +21,7 @@ pub async fn on_deploy() {
 
 // 下面是具体的逻辑实现, 这个处理会被调用
 #[request_handler]
-async fn handler(header: Vec<(String, String)>, qry: HashMap<String, Value>, _body: Vec<u8>) {
+async fn handler(headers: Vec<(String, String)>, qry: HashMap<String, Value>, _body: Vec<u8>) {
     logger::init();
     log::info!("Headers--{:?}", header);
 
