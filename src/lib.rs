@@ -21,7 +21,12 @@ pub async fn on_deploy() {
 
 // 下面是具体的逻辑实现, 这个处理会被调用
 #[request_handler]
-async fn handler(header: Vec<(String, String)>, qry: HashMap<String, Value>, _body: Vec<u8>) {
+async fn handler(
+    header: Vec<(String, String)>,
+    _subpath: String,
+    qry: HashMap<String, Value>,
+    _body: Vec<u8>,
+) {
     logger::init();
     log::info!("Headers--{:?}", header);
 
