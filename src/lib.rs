@@ -4,6 +4,8 @@
 //!
 //! 我们同步完毕代码了，  需要在flows中创建一个flow, 我们在创建的flow的同时会自动
 //! 进行编译和部署的，同时我们还会查看编译结果
+//! 我们在git更新代码的时候， flow也会出发自动的编译和部署的。
+//! 部署成功了， 我们来实验一下
 
 use std::collections::HashMap;
 
@@ -34,8 +36,8 @@ async fn handler(
     let msg = qry.get("msg").unwrap();
     // 设置响应消息
     let resp = format!(
-        "欢迎来到flows.network, 
-    您刚才发送了一个消息:{}",
+        "welcome flows.network, 
+    you have sent a message :{}",
         msg
     );
     // 发送消息
